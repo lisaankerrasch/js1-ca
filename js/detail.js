@@ -71,7 +71,6 @@ async function getBeerDetail() {
   } catch (error) {
     console.log("error");
     loader.classList.remove("loader");
-    detailContainer.classList.remove("beer-detail");
     detailContainer.innerHTML += displayError("There has been an error.");
   }
 }
