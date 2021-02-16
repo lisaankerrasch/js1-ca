@@ -23,7 +23,7 @@ async function getBeer() {
   } catch (error) {
     console.log("error");
     loader.classList.remove("loader");
-    beerContainer.innerHTML += `<div class="error"><p> Unable to fetch results </p></div>`;
+    beerContainer.innerHTML += displayError("Unable to fetch results");
   }
 }
 

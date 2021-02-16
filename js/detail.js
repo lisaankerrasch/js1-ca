@@ -72,7 +72,7 @@ async function getBeerDetail() {
     console.log("error");
     loader.classList.remove("loader");
     detailContainer.classList.remove("beer-detail");
-    detailContainer.innerHTML += `<div class="error">There has been an error fetching the API</div>`;
+    detailContainer.innerHTML += displayError("There has been an error.");
   }
 }
 
