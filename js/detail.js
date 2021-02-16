@@ -36,8 +36,9 @@ getBeerDetail();
 
 function createHTML(details) {
   detailContainer.innerHTML += `<div class="beer-detail"><h1>${details[0].name}</h1>
-     <p class="tagline">${details[0].tagline}</p>
+     <p class="italics">${details[0].tagline}</p>
      <img src="${details[0].image_url}" alt="${details.name}"/>
      <p>${details[0].description}</p>
-     <p>Pair with: ${details[0].food_pairing}</p></div>`;
+     <p>Pair with: ${details[0].food_pairing}</p>
+    <p class="italics">First brewed: ${details[0].first_brewed}</p></div>`;
 }
