@@ -52,8 +52,11 @@ img {
   margin: 50px auto;
   background-color: pink;
   border: solid 5px red;
+  padding: 50px;
   text-align: center;
   width: 400px;
+  font-size: 18px;
+  font-family: sans-serif;
 }
 
 .loader {

@@ -41,21 +41,14 @@
 
 // getBeerDetail();
 
-// // function createHTML(details) {
-// //   detailContainer.innerHTML += `<div>
-// //     <h1>${details.name}</h1>
-// //     <p class="type">${details.tagline}</p>
-// //     <p>${details.description}</p>
-// //     <img src="${details.image_url}" alt="${details.name}"/>
-// //     <p>${details.description}</p></div>`;
-// // }
-
 const detailContainer = document.querySelector(".beer-detail");
 const loader = document.querySelector(".loader");
 const title = document.querySelector("title");
 
 const queryString = document.location.search;
+
 const params = new URLSearchParams(queryString);
+
 const id = params.get("id");
 
 console.log(id);
@@ -71,19 +64,21 @@ async function getBeerDetail() {
 
     console.log(details);
 
-    createHtml(details);
+    createHTML(details);
 
     loader.classList.remove("loader");
     title.innerHTML = ` ${details.name}`;
   } catch (error) {
-    console.log(error);
-    detailContainer.innerHTML += `There has been an error fetching API`;
+    console.log("error");
+    loader.classList.remove("loader");
+    detailContainer.classList.remove("beer-detail");
+    detailContainer.innerHTML += `<div class="error">There has been an error fetching the API</div>`;
   }
 }
 
 getBeerDetail();
 
-function createHtml(details) {
+function createHTML(details) {
   detailContainer.innerHTML += `<h1>${details.name}</h1>
      <p class="tagline">${details.tagline}</p>
      <img src="${details.image_url}" alt="${details.name}"/>
