@@ -48,12 +48,18 @@ function validateForm(event) {
   }
 }
 
+function submitForm(event) {
+  if (
+    checkLength(fullName.value, 0) &&
+    checkLength(subject.value, 9) &&
+    checkLength(address.value, 24) &&
+    validateEmail(email.value)
+  ) {
+    event.preventDefault;
+    success.innerHTML = `<div class="message">Success! We will be in touch with you shortly. </div>`;
+    form.reset();
+  }
+}
+
 form.addEventListener("submit", validateForm);
-
-// form.addEventListener("submit", submitForm);
-
-// function submitForm(event) {
-//   event.preventDefault();
-//   success.innerHTML = `<div class="message">Success! We will be in touch with you shortly. </div>`;
-//   form.reset();
-// }
+form.addEventListener("submit", submitForm);

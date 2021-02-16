@@ -10,6 +10,10 @@ const id = params.get("id");
 
 console.log(id);
 
+if (id === null) {
+  location.href = "/";
+}
+
 const url = "https://api.punkapi.com/v2/beers/" + id;
 
 console.log(url);
