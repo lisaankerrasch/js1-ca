@@ -41,7 +41,7 @@
 
 // getBeerDetail();
 
-const detailContainer = document.querySelector(".beer-detail");
+const detailContainer = document.querySelector(".beer-container");
 const loader = document.querySelector(".loader");
 const title = document.querySelector("title");
 
@@ -67,7 +67,7 @@ async function getBeerDetail() {
     createHTML(details);
 
     loader.classList.remove("loader");
-    title.innerHTML = ` ${details.name}`;
+    title.innerHTML = ` ${details[0].name}`;
   } catch (error) {
     console.log("error");
     loader.classList.remove("loader");
@@ -79,9 +79,9 @@ async function getBeerDetail() {
 getBeerDetail();
 
 function createHTML(details) {
-  detailContainer.innerHTML += `<h1>${details.name}</h1>
-     <p class="tagline">${details.tagline}</p>
-     <img src="${details.image_url}" alt="${details.name}"/>
-     <p>${details.description}</p>
-     <p>Pair with: ${details.food_pairing}</p>`;
+  detailContainer.innerHTML += `<div class="beer-detail"><h1>${details[0].name}</h1>
+     <p class="tagline">${details[0].tagline}</p>
+     <img src="${details[0].image_url}" alt="${details.name}"/>
+     <p>${details[0].description}</p>
+     <p>Pair with: ${details[0].food_pairing}</p></div>`;
 }
