@@ -13,7 +13,13 @@ a {
   text-decoration: none;
 }
 
-.container {
+img {
+  border-radius: 30%;
+  width: 20%;
+  padding: 50px 0;
+}
+
+.beer-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,7 +30,7 @@ a {
   font-style: italic;
 }
 
-.beer {
+.beer-list {
   max-width: 300px;
   background-color: lightgrey;
   padding: 40px;
@@ -42,12 +48,6 @@ a {
   border: solid 5px black;
 }
 
-img {
-  border-radius: 30%;
-  width: 20%;
-  padding: 50px 0;
-}
-
 .error {
   margin: 50px auto;
   background-color: pink;
@@ -59,10 +59,12 @@ img {
   font-family: sans-serif;
 }
 
+/* Loader */
+
 .loader {
   margin: 50px auto;
   border: 15px solid grey;
-  border-top: 15px solid lightyellow;
+  border-top: 15px solid turquoise;
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -77,6 +79,8 @@ img {
     transform: rotate(360deg);
   }
 }
+
+/* Header */
 
 header {
   position: sticky;
